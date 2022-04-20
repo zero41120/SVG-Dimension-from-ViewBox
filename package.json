@@ -1,0 +1,24 @@
+{
+  "name": "@zero41120/svg-dimension-from-viewbox",
+  "version": "1.0.0",
+  "description": "This CLI utility reads provided SVG files, extract width and height from ViewBox attribute, scale the value, and writes them back as width and height. ",
+  "bin": {
+    "svgvbdimension": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zero41120/SVG-Dimension-from-ViewBox.git"
+  },
+  "keywords": [
+    "SVG"
+  ],
+  "author": "zero41120",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zero41120/SVG-Dimension-from-ViewBox/issues"
+  },
+  "homepage": "https://github.com/zero41120/SVG-Dimension-from-ViewBox#readme"
+}
