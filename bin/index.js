@@ -31,12 +31,12 @@ function parseArgs(args) {
     error(`Invalid scale: ${scaleText}`);
     process.exit(1);
   }
-  args.splice(scaleIndex, 2);
+  if(scaleIndex !== -1) args.splice(scaleIndex, 2);
 
   // Parse overwrite argument
   const overwriteIndex = args.indexOf('--overwrite');
   const overwrite = args.indexOf('--overwrite') !== -1;
-  args.splice(overwriteIndex, 1);
+  if(overwriteIndex != -1) args.splice(overwriteIndex, 1);
 
   // Get source and destination filepaths
   const [source, destination] = args;
@@ -56,11 +56,12 @@ function parseArgs(args) {
 function processSVG(source, scale) {
   // Read SVG and get viewBox attribute
   const svg = fs.readFileSync(source, 'utf-8');
-  const viewBox = svg.match(/viewBox="([^"]+)"/)[1];
-  if (!viewBox) {
+  const viewBoxMatch = svg.match(/viewBox="([^"]+)"/);
+  if (!viewBoxMatch) {
     log(`Cannot find viewBox attribute in ${source}. Making no changes.`);
     return svg;
   }
+  const viewBox = viewBoxMatch[1];
 
   // Get width and height from viewBox, and calculate the scaled dimensions
   const [width, height] = viewBox.split(' ').slice(2);
