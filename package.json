@@ -1,6 +1,6 @@
 {
   "name": "@zero41120/svg-dimension-from-viewbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This CLI utility reads provided SVG files, extract width and height from ViewBox attribute, scale the value, and writes them back as width and height. ",
   "bin": {
     "svgvbdimension": "./bin/index.js"
